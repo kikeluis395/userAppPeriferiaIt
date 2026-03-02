@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ user.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+      <p><strong>Empresa:</strong> {{ user.company.name }}</p>
+      <p>
+        <strong>Dirección:</strong>
+        {{ user.address.street }},
+        {{ user.address.suite }},
+        {{ user.address.city }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

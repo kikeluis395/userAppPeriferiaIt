@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Search -->
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterUsers()"
+    placeholder="Buscar por nombre">
+  </ion-searchbar>
+
+  <!-- Pull to Refresh -->
+  <ion-refresher slot="fixed" (ionRefresh)="loadUsers($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Lista -->
+  <ion-list class="users-list">
+    <ion-card
+      *ngFor="let user of filteredUsers"
+      class="user-card"
+      [routerLink]="['/user-detail', user.id]"
+      button>
+      <ion-item lines="none" class="user-item">
+        <ion-avatar slot="start" >
+          {{ getInitials(user.name) }}
+        </ion-avatar>
+
+        <ion-label>
+          <h2>{{ user.name }}</h2>
+          <p>{{ user.email }}</p>
+          <p class="city">{{ user.address.city }}</p>
+        </ion-label>
+
+        <ion-icon
+          slot="end"
+          name="chevron-forward-outline"
+          color="medium">
+        </ion-icon>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

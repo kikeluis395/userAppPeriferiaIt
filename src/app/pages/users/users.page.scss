@@ -1,0 +1,33 @@
+.users-list {
+	background: transparent;
+	padding: 8px 0 16px;
+}
+
+.user-card {
+	margin: 10px 12px;
+	border-radius: 16px;
+}
+
+.user-item {
+	--background: var(--ion-card-background);
+	--padding-top: 12px;
+	--padding-bottom: 12px;
+	--inner-padding-end: 12px;
+}
+
+ion-label h2 {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+ion-label p {
+	margin: 0;
+	color: var(--ion-color-medium-shade);
+}
+
+.city {
+	margin-top: 4px;
+	font-weight: 500;
+	color: var(--ion-color-primary);
+}
